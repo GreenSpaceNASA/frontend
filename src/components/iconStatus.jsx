@@ -6,33 +6,41 @@ import { faHouseTsunami } from "@fortawesome/free-solid-svg-icons";
 import { faPersonSwimming } from "@fortawesome/free-solid-svg-icons";
 import { faPersonDrowning } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { faLadderWater } from "@fortawesome/free-solid-svg-icons";
+
 
 const iconMap = {
+  good: faLadderWater,
+  moderate: faPersonSwimming,
+  contaminated: faBiohazard,
+  unknown: faTriangleExclamation,
   radiation: faRadiation,
-  chemistry: faBiohazard,
-  alert: faTriangleExclamation,
-  tsunami: faHouseTsunami,
-  swim: faPersonSwimming,
-  drown: faPersonDrowning,
+  danger: faPersonDrowning,
+  protected: faHouseTsunami,
 };
 
-export default function DisplayIconStatus() {
-  const [fontIcon, setIconState] = useState();
-  useEffect(() => {
-    const response = "radiation"; //api endpoint
-    setIconState(iconMap[response]);
-  }, []);
+export default function DisplayIconStatus({waterStt}) {
+  // const [fontIcon, setIconState] = useState();
+  // useEffect(() => {
+  //   const response = {waterStt}; //api endpoint
+  //   setIconState(iconMap[response]);
+  // }, []);
 
   return (
     <>
-      <div>
-        <img src="/51797.gif" alt="water-drop" width={2200} heigh={200} />
-        <FontAwesomeIcon
-          icon={fontIcon}
+      <div className="bg-lime-100 rounded-lg box-content h-80 w-auto ml-10 mr-10 mb-10">
+        <div className="w-96 mr-auto ml-auto block">
+          <img src="/drop-water.gif" alt="water-drop"  />
+        </div>
+        <div>
+          <FontAwesomeIcon
+          icon={iconMap[waterStt]}
           beat={true}
           size="2x"
-          transform="up-300 right-600"
+          transform="up-100 right-500"
         />
+        </div>
+        
       </div>
     </>
   );
