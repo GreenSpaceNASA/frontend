@@ -19,7 +19,7 @@ export default function DisplayAnimals({ animalsList}) {
     <div className="text-xl text-sky-200 w-auto m-auto mt-10 mb-20 text-center">
       <div className="inline-flex items-center justify-center w-full opacity-20">
     <hr className="w-64 h-1 my-8 bg-blue-900 border-0 rounded"/>
-    <div className="absolute px-4 -translate-x-1/2 bg-white left-1/2 bg-transparent">
+    <div className="absolute px-4 -translate-x-1/2 left-1/2">
           {/* <FontAwesomeIcon icon={faShrimp} className="text-2xl text-blue-900"/> */}
           <FontAwesomeIcon icon={faFish} className="text-2xl text-blue-900"/>
     </div>

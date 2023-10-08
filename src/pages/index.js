@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
 import DisplayIconStatus from '@/components/iconStatus';
 import CountDistance from '@/components/distanceCount';
-import ContaminateLevel from '@/components/chart/contaminateChart';
+// import ContaminateLevel from '@/components/chart/contaminateChart';
 import DisplayWaterTemperature
  from '@/components/temperature/waterTemperature';
 import getArea from '@/lib/getArea';
