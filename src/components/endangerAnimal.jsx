@@ -3,14 +3,27 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShield } from "@fortawesome/free-solid-svg-icons";
 import { faShrimp } from "@fortawesome/free-solid-svg-icons";
 import { faFish } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 export default function DisplayAnimals({ animalsList}) {
+
   const animalListJSX = animalsList.map((item) => {
+  const [showMe, setShowMe] = useState(false);
+  function toggle(){
+    setShowMe(!showMe);
+  }
     return (
         <li key={item.name} className="font-bold py-4">
+          <button onClick={toggle}>
           { item.in_danger &&(<span>
           <FontAwesomeIcon icon={faShield} className="text-2xl text-sky-300"/>
           </span>)}{item.name} <br />
+          </button>
+          <div className="font-normal text-xl py-4 px-6" style={{
+        display: showMe?"block":"none"
+      }}>
+        {item.description}
+      </div>
         </li>
     );
   });
