@@ -6,6 +6,7 @@ import DisplayWaterTemperature
  from '@/components/temperature/waterTemperature';
 import getArea from '@/lib/getArea';
 import getAnimal from '@/lib/getAnimal';
+import DisplayAnimals from '@/components/endangerAnimal';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,6 +26,7 @@ export default function Home({area, animals}) {
     currentLocation={area.location.name}/>
     <ContaminateLevel/>
     <DisplayWaterTemperature tempCelcius={area.nearest_aquatic_location.temperature}/>
+    <DisplayAnimals animalsList={animals.animals.description}/>
     </>
   )
 }
