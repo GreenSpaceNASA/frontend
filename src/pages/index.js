@@ -18,15 +18,14 @@ export async function getServerSideProps() {
 
 export default function Home({area, animals}) {
   return (
-    <>
-    <DisplayIconStatus waterStt={area.nearest_aquatic_location.condition}/>
+    <div className='transition-all duration-300'>
+    <DisplayIconStatus waterStt={area.nearest_aquatic_location.condition} location={area.location.name}/>
     <CountDistance 
     aquaticArea = {area.nearest_aquatic_location.name}
-    distance={area.nearest_aquatic_location.distance} 
-    currentLocation={area.location.name}/>
-    <ContaminateLevel/>
+    distance={area.nearest_aquatic_location.distance} />
+    {/* <ContaminateLevel/> */}
     <DisplayWaterTemperature tempCelcius={area.nearest_aquatic_location.temperature}/>
     <DisplayAnimals animalsList={animals.animals}/>
-    </>
+    </div>
   )
 }

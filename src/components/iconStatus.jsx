@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRadiation } from "@fortawesome/free-solid-svg-icons";
+import { faDroplet, faRadiation } from "@fortawesome/free-solid-svg-icons";
 import { faBiohazard } from "@fortawesome/free-solid-svg-icons";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { faHouseTsunami } from "@fortawesome/free-solid-svg-icons";
@@ -19,7 +19,7 @@ const iconMap = {
   protected: faHouseTsunami,
 };
 
-export default function DisplayIconStatus({waterStt}) {
+export default function DisplayIconStatus({location, waterStt}) {
   // const [fontIcon, setIconState] = useState();
   // useEffect(() => {
   //   const response = {waterStt}; //api endpoint
@@ -28,19 +28,24 @@ export default function DisplayIconStatus({waterStt}) {
 
   return (
     <>
-      <div className="bg-lime-100 rounded-lg box-content h-80 w-auto ml-10 mr-10 mb-10">
+      <div className="w-auto m-auto mt-20 text-center">
         <div className="w-96 mr-auto ml-auto block">
-          <img src="/drop-water.gif" alt="water-drop"  />
-        </div>
-        <div>
           <FontAwesomeIcon
-          icon={iconMap[waterStt]}
-          beat={true}
-          size="2x"
-          transform="up-100 right-500"
+          icon={faDroplet}
+          bounce={true}
+          size="8x"
+            className="opacity-50"
         />
         </div>
         
+        <h1 className="text-6xl pt-8 font-bold">
+          {location}
+          <FontAwesomeIcon
+          icon={iconMap[waterStt]}
+          // beat={true}
+            className="opacity-75 absolute top-56 right-1/4 text-4xl"
+        />
+        </h1>
       </div>
     </>
   );
