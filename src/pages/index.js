@@ -26,7 +26,7 @@ export default function Home({area, animals}) {
     currentLocation={area.location.name}/>
     <ContaminateLevel/>
     <DisplayWaterTemperature tempCelcius={area.nearest_aquatic_location.temperature}/>
-    <DisplayAnimals animalsList={animals.animals.description}/>
+    <DisplayAnimals animalsList={animals.animals}/>
     </>
   )
 }

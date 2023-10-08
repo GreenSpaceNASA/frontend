@@ -1,11 +1,21 @@
+import { faBiohazard } from "@fortawesome/free-solid-svg-icons";
 
-
-export default function DisplayAnimals({animalsList}) {
+export default function DisplayAnimals({ animalsList}) {
+  const animalListJSX = animalsList.map((item) => {
     return (
+      <>
         <div>
-<p>
-    Lists: {animalsList}
-</p>
+          {item.name} <br />
+          {item.in_danger} <br />
+          {item.description}
         </div>
+      </>
     );
+  });
+
+  return (
+    <div>
+        {animalListJSX}
+    </div>
+  );
 }
