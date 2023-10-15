@@ -5,6 +5,6 @@ const nextConfig = {
 
 module.exports = {
   env: {
-    API_URL: 'http://192.168.10.112:3000'
+    API_URL: 'http://localhost:8080'
   },
 }
