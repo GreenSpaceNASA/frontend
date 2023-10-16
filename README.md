@@ -11,7 +11,7 @@ With these considerations in mind, we conceived the idea of an application that 
 - Identify and learn about endangered species in the area, along with actionable steps to protect them.
 
 ## Explaination of water status
-We have defined these water status categories based on our experience, without relying on any official documentation. Please consider them as reference points.
+We have defined these water status categories based on our experience, we are trying to take official documentation as base source for better definition. So please consider these status as below as reference points.
 | Condition | Description | Icon |
 | --- | --- | --- |
 | Good | The water quality is good | <img src="/public/water-ladder-solid.svg" alt="AppScreenshot" width="30" height="30"> |
@@ -39,7 +39,7 @@ pnpm dev
 # or
 bun dev
 ```
-We haven't deployed the app yet so you can open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+We work on the process to deploy the app so you can open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 If you successfully run the app in the local environment, you will see the screenshot as below
 <img src="/public/GreenSpaceApp.png" alt="AppScreenshot" width="270" height="600" border-radius="5px">
 
