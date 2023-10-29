@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -16,7 +16,9 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "axios": "^1.5.1",
     "chart.js": "^4.4.0",
-    "next": "latest",
+    "framer-motion": "^10.16.4",
+    "next": "^14.0.0",
+    "node": "^21.1.0",
     "parcel": "^2.9.3",
     "react": "latest",
     "react-dom": "latest",
