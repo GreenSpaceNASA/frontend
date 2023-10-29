@@ -1,78 +1,41 @@
-import { Chart } from "chart.js/auto";
-import cubejs from "@cubejs-client/core";
 import {
-  LinearScaleBase,
-  LineController,
-  LineElement,
-  LineProps,
+  Chart as ChartJS,
   CategoryScale,
+  LinearScale,
   PointElement,
+  LineElement,
+  ChartOptions,
+  ChartData,
 } from "chart.js";
-import { data } from "autoprefixer";
+import { Line } from "react-chartjs-2";
+ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement);
 
+export const options = {
+  plugins: {
+    title: {
+      display: true,
+      text: "ENDANGER SPECIES",
+    },
+  },
+};
 
-const apiurl = "";
-const chart = new Chart({
-  type: "line",
-  data: data,
-  option: {},
-});
-
-(async function MockData() {
-  const data = [
-    { year: 2010, count: 10 },
-    { year: 2011, count: 20 },
-    { year: 2012, count: 15 },
-    { year: 2013, count: 25 },
-    { year: 2014, count: 22 },
-    { year: 2015, count: 30 },
-    { year: 2016, count: 28 },
-  ];
-  new Chart(
-    document.getElementById('myChart'),
-    // {
-    //   type: 'line',
-    //   data: {
-    //     labels: data.map(row => row.year),
-    //     datasets: [
-    //       {
-    //         label: 'ENDANGER SPECIES BY YEAR',
-    //         data: data.map(row => row.count)
-    //       }
-    //     ]
-    //   }
-    // }
+const labels = ["January", "February", "March", "April", "", "May"];
+export const rawData = {
+  labels,
+  datasets: [
     {
-      type: 'line',
-      options: {
-        animation: true,
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-            enabled: true
-          }
-        }
-      },
-      data: {
-        labels: data.map(row => row.year),
-        datasets: [
-          {
-            label: 'ENDANGER SPECIES BY YEAR',
-            data: data.map(row => row.count)
-          }
-        ]
-      }
-    }
-  );
-})();
+      data: labels.map(() => datatype.number({ min: -100, max: 1000 })),
+    },
+  ],
+};
 
 export default function ContaminateLevel() {
   return (
-  <>
-    <div>
-      <canvas id="myChart"></canvas>
-    </div>
-  </>
-)}
+    <>
+      <div>
+        {/* <canvas id="myChart"></canvas> */}
+        <Line options={options} data={rawData} />
+      </div>
+    </>
+  );
+}
