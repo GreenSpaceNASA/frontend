@@ -7,7 +7,7 @@ import { faPersonSwimming } from "@fortawesome/free-solid-svg-icons";
 import { faPersonDrowning } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 import { faLadderWater } from "@fortawesome/free-solid-svg-icons";
-
+import { motion } from "framer-motion"
 
 const iconMap = {
   good: faLadderWater,
@@ -29,14 +29,18 @@ export default function DisplayIconStatus({location, waterStt}) {
   return (
     <>
       <div className="w-auto m-auto mt-20 text-center">
-        <div className="w-96 mr-auto ml-auto block">
+        <motion.div className="w-96 mr-auto ml-auto block"
+        drag
+        dragConstraints={{left:0, right:0, top: 0, bottom:0}}
+        dragElastic={1}
+        whileTap={{ scale: 1.5 }}>
           <FontAwesomeIcon
           icon={faDroplet}
           bounce={true}
           size="8x"
-            className="opacity-50"
+          className="opacity-50"
         />
-        </div>
+        </motion.div>
         
         <h1 className="text-6xl pt-8 font-bold">
           {location}
