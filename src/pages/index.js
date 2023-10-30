@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
 import DisplayIconStatus from '@/components/iconStatus';
 import CountDistance from '@/components/distanceCount';
-// import ContaminateLevel from '@/components/chart/contaminateChart';
+import ContaminateLevel from '@/components/chart/contaminateChart';
 import DisplayWaterTemperature
  from '@/components/temperature/waterTemperature';
 import getArea from '@/lib/getArea';
@@ -23,8 +23,8 @@ export default function Home({area, animals}) {
     <CountDistance 
     aquaticArea = {area.nearest_aquatic_location.name}
     distance={area.nearest_aquatic_location.distance} />
-    {/* <ContaminateLevel/> */}
     <DisplayWaterTemperature tempCelcius={area.nearest_aquatic_location.temperature}/>
+    <ContaminateLevel/>
     <DisplayAnimals animalsList={animals.animals}/>
     </div>
   )
