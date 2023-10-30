@@ -7,6 +7,7 @@ import {
   ChartOptions,
   ChartData,
 } from "chart.js";
+import { faker } from '@faker-js/faker' 
 import { Line } from "react-chartjs-2";
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement);
 
@@ -19,12 +20,12 @@ export const options = {
   },
 };
 
-const labels = ["January", "February", "March", "April", "", "May"];
+const labels = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 export const rawData = {
   labels,
   datasets: [
     {
-      data: labels.map(() => datatype.number({ min: -100, max: 1000 })),
+      data: labels.map(() => faker.datatype.number({ min: -100, max: 1000 })),
     },
   ],
 };
@@ -32,8 +33,7 @@ export const rawData = {
 export default function ContaminateLevel() {
   return (
     <>
-      <div>
-        {/* <canvas id="myChart"></canvas> */}
+      <div className="pt-10 pl-4 pr-4">
         <Line options={options} data={rawData} />
       </div>
     </>
