@@ -11,7 +11,6 @@ const inter = Inter({ subsets: ['latin'] })
 
 export async function getServerSideProps() {
   const {location, nearestAquaticLocation, animals} = await getAPI();
-  console.log(nearestAquaticLocation)
   return {props: {location, nearestAquaticLocation, animals}}
   
 }
