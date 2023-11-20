@@ -4,15 +4,14 @@ import CountDistance from '@/components/distanceCount';
 import ContaminateLevel from '@/components/chart/contaminateChart';
 import DisplayWaterTemperature
  from '@/components/temperature/waterTemperature';
-import getArea from '@/lib/getArea';
+import getAPI from '@/lib/getAPI';
 import getAnimal from '@/lib/getAnimal';
 import DisplayAnimals from '@/components/endangerAnimal';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export async function getServerSideProps() {
-  const area = await getArea();
-  const animals = await getAnimal();
+  const {area, animals} = await getAPI();
   return {props: {area, animals}}
 }
 
