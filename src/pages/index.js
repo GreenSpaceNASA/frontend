@@ -4,28 +4,27 @@ import CountDistance from '@/components/distanceCount';
 import ContaminateLevel from '@/components/chart/contaminateChart';
 import DisplayWaterTemperature
  from '@/components/temperature/waterTemperature';
-import getArea from '@/lib/getArea';
-import getAnimal from '@/lib/getAnimal';
+import getAPI from '@/lib/getAPI';
 import DisplayAnimals from '@/components/endangerAnimal';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export async function getServerSideProps() {
-  const area = await getArea();
-  const animals = await getAnimal();
-  return {props: {area, animals}}
+  const {location, nearestAquaticLocation, animals} = await getAPI();
+  return {props: {location, nearestAquaticLocation, animals}}
+  
 }
 
-export default function Home({area, animals}) {
+export default function Home({location, nearestAquaticLocation, animals}) {
   return (
     <div className='transition-all duration-300'>
-    <DisplayIconStatus waterStt={area.nearest_aquatic_location.condition} location={area.location.name}/>
+    <DisplayIconStatus waterStt={nearestAquaticLocation.condition} location={location.name}/>
     <CountDistance 
-    aquaticArea = {area.nearest_aquatic_location.name}
-    distance={area.nearest_aquatic_location.distance} />
-    <DisplayWaterTemperature tempCelcius={area.nearest_aquatic_location.temperature}/>
+    aquaticLocation = {nearestAquaticLocation.name}
+    distance={nearestAquaticLocation.distance} />
+    <DisplayWaterTemperature tempCelcius={nearestAquaticLocation.temperature}/>
     <ContaminateLevel/>
-    <DisplayAnimals animalsList={animals.animals}/>
+    <DisplayAnimals animalsList={animals}/>
     </div>
   )
 }

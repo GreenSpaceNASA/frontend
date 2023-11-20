@@ -10,13 +10,13 @@ import { faLadderWater } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion"
 
 const iconMap = {
-  good: faLadderWater,
-  moderate: faPersonSwimming,
-  contaminated: faBiohazard,
-  unknown: faTriangleExclamation,
-  radiation: faRadiation,
-  danger: faPersonDrowning,
-  protected: faHouseTsunami,
+  GOOD: faLadderWater,
+  MODERATE: faPersonSwimming,
+  CONTAMINATED: faBiohazard,
+  UNKNOWN: faTriangleExclamation,
+  RADIATION: faRadiation,
+  DANGER: faPersonDrowning,
+  PROTECTED: faHouseTsunami,
 };
 
 export default function DisplayIconStatus({location, waterStt}) {

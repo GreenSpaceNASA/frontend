@@ -1,10 +1,10 @@
-/** @type {import('next').NextConfig} */
+/* @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
 }
 
 module.exports = {
   env: {
-    API_URL: 'http://localhost:8080'
+    API_URL: 'http://192.168.10.102:8080'
   },
 }
