@@ -19,7 +19,7 @@
     "framer-motion": "^10.16.4",
     "next": "^14.0.0",
     "node": "^21.1.0",
-    "parcel": "^2.9.3",
+    "parcel": "^2.10.3",
     "react": "latest",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "latest",
